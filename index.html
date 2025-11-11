@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Healthcare For Your Family</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>MediCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#doctores" class="nav-link">Doctores</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+<section id="inicio" class="hero-section">
+  <picture class="hero-bg">
+    <!-- Imagen para pantallas grandes -->
+    <source media="(min-width: 768px)" srcset="./images/hero_desktop.webp" type="image/webp">
+    <!-- Imagen para móviles -->
+    <img src="./images/hero_mobile.webp" alt="Atención médica familiar en clínica moderna" loading="lazy">
+  </picture>
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1>Atención Médica para tu familia</h1>
+      <p>La salud y el bienestar de nuestros pacientes y su equipo de atención médica siempre serán nuestra prioridad, por lo que seguimos las mejores prácticas de limpieza.</p>
+      
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-stethoscope"></i>
+          <span>Exámenes</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-prescription-bottle-alt"></i>
+          <span>Recetas</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-heartbeat"></i>
+          <span>Cardiología</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Cards Section -->
+   <section class="cards-section">
+        <div class="container">
+            <div class="cards-container">
+                <div class="card card-1">
+                    <i class="fas fa-ambulance card-icon"></i>
+                    <h3>Casos de Emergencia</h3>
+                    <p>No dude en contactar a nuestro personal de recepción en cualquier momento.</p>
+                </div>
+                <div class="card card-2">
+                    <i class="fas fa-user-md card-icon"></i>
+                    <h3>Horario de Doctores</h3>
+                    <p>Médicos calificados disponibles las 24 horas, consulte nuestro horario.</p>
+                </div>
+                <div class="card card-3">
+                    <i class="fas fa-clock card-icon"></i>
+                    <h3>Horario de Atención</h3>
+                    <p>Lunes - Viernes 8:00 - 19:00 hrs</p>
+                </div>
+                <div class="card card-4">
+                    <i class="fas fa-map-marker-alt card-icon"></i>
+                    <h3>Ubicación y Direcciones</h3>
+                    <p>2507 Beverley Rd Brooklyn, Nueva York 11794 Estados Unidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="./images/about.webp">
+                </div>
+                
+                <div class="about-text">
+                    <h2>Sobre Nuestra Clínica</h2>
+                    <p>Somos un centro médico comprometido con brindar la más alta calidad en atención médica para toda la familia. Con más de 15 años de experiencia, nuestro equipo de profesionales altamente calificados está dedicado a su bienestar.</p>
+                    
+                    <p>Nuestra misión es proporcionar atención compasiva y personalizada utilizando tecnología médica de vanguardia en un ambiente cálido y acogedor.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-user-md"></i>
+                            <div>
+                                <h4>Médicos Certificados</h4>
+                                <p>Contamos con especialistas en diversas áreas médicas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature">
+                            <i class="fas fa-clinic-medical"></i>
+                            <div>
+                                <h4>Instalaciones Modernas</h4>
+                                <p>Equipamiento de última generación para su diagnóstico</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horario Extendido</h4>
+                                <p>Atención en horarios convenientes para usted</p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-feature">
+                            <i class="fas fa-ambulance"></i>
+                            <div>
+                                <h4>Servicio de Urgencias</h4>
+                                <p>Atención inmediata las 24 horas del día</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contacto" class="btn-primary">Conoce Más Sobre Nosotros</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctores" class="doctors-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Doctores Especialistas</h2>
+                <p>Contamos con un equipo de profesionales altamente calificados</p>
+            </div>
+            
+            <div class="doctors-container" id="doctors-container">
+                <!-- Los doctores se cargarán dinámicamente desde JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Servicios Médicos</h2>
+                <p>Ofrecemos una amplia gama de servicios para cuidar de su salud</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Cardiología</h3>
+                    <p>Especialistas en el cuidado del corazón y sistema cardiovascular.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neurología</h3>
+                    <p>Diagnóstico y tratamiento de enfermedades del sistema nervioso.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-baby"></i>
+                    <h3>Pediatría</h3>
+                    <p>Cuidado especializado para la salud de sus hijos.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-bone"></i>
+                    <h3>Ortopedia</h3>
+                    <p>Tratamiento de lesiones y enfermedades del sistema musculoesquelético.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Oftalmología</h3>
+                    <p>Cuidado integral de la visión y salud ocular.</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-tooth"></i>
+                    <h3>Odontología</h3>
+                    <p>Servicios dentales completos para toda la familia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Testimonios de Nuestros Pacientes</h2>
+                <p>Lo que nuestros pacientes dicen sobre nuestra atención</p>
+            </div>
+            
+            <div class="testimonials-container" id="testimonials-container">
+                <!-- Los testimonios se cargarán dinámicamente desde db.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contáctenos</h2>
+                <p>Estamos aquí para responder sus preguntas</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>2507 Beverley Rd Brooklyn, Nueva York 11794</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@medicare.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes - Viernes: 8:00 - 19:00</p>
+                            <p>Sábados: 9:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" placeholder="Teléfono">
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare</h3>
+                    <p>Su salud es nuestra prioridad. Brindamos atención médica de calidad para toda la familia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#doctores">Doctores</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Cardiología</a></li>
+                        <li><a href="#">Neurología</a></li>
+                        <li><a href="#">Pediatría</a></li>
+                        <li><a href="#">Ortopedia</a></li>
+                        <li><a href="#">Emergencias</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Brooklyn, Nueva York</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MediCare. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Botón de WhatsApp Flotante -->
+    <a href="https://wa.me/15551234567?text=Hola,%20me%20gustaría%20agendar%20una%20cita" 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
