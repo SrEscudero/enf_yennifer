@@ -428,13 +428,32 @@ function changeLanguage(lang) {
 }
 
 // Función para cambiar el mensaje predeterminado de WhatsApp
+// Función para cambiar el mensaje predeterminado de WhatsApp
 function updateWhatsAppLink(lang) {
+    // 1. Definimos los mensajes según el idioma
+    const msgES = "Hola Yennifer, me gustaría solicitar información para agendar una visita médica a domicilio.";
+    const msgPT = "Olá Yennifer, gostaria de solicitar informações para agendar uma visita médica em domicílio.";
+    
+    // Asignamos el texto y creamos el enlace codificado
+    const text = lang === 'pt' ? msgPT : msgES;
+    const waUrl = `https://wa.me/555499168720?text=${encodeURIComponent(text)}`;
+
+    // 2. Actualizamos el Botón Flotante
     const waFloat = document.querySelector('.whatsapp-float');
     if(waFloat) {
-        const msgES = "Hola Yennifer, me gustaría solicitar información sobre tus servicios";
-        const msgPT = "Olá Yennifer, gostaria de solicitar informações sobre seus serviços";
-        const text = lang === 'pt' ? msgPT : msgES;
-        waFloat.href = `https://wa.me/555499168720?text=${encodeURIComponent(text)}`;
+        waFloat.href = waUrl;
+    }
+
+    // 3. Actualizamos el Botón "Agendar Consulta" del Inicio (Hero)
+    const heroBtn = document.querySelector('[data-i18n="hero_btn_book"]');
+    if(heroBtn) {
+        heroBtn.href = waUrl;
+    }
+
+    // 4. Actualizamos el Ícono de WhatsApp del Pie de Página (Footer)
+    const footerWaBtn = document.querySelector('.social-icon.whatsapp');
+    if(footerWaBtn) {
+        footerWaBtn.href = waUrl;
     }
 }
 
