@@ -1,49 +1,21 @@
-// Base de datos de testimonios
+// Testimonios - Asegúrate de que las rutas de imágenes sean correctas
 const testimonials = [
     {
-        id: 1,
+        content: "Excelente profesional, muy dedicada y atenta. Mi madre se recuperó muy rápido gracias a sus cuidados.",
+        avatar: "./images/maria.png", // Cambia por tu ruta real
         name: "María González",
-        position: "Paciente",
-        avatar: "./images/maria.png",
-        content: "Excelente atención médica. Los doctores son muy profesionales y el personal es muy amable. Mi familia y yo confiamos plenamente en sus servicios."
+        position: "Familiar de paciente"
     },
     {
-        id: 2,
-        name: "Carlos Rodríguez",
-        position: "Paciente",
+        content: "La enfermera Yennifer es muy competente y cariñosa. La recomiendo 100%.",
         avatar: "./images/carlos.png",
-        content: "Llevo años siendo paciente en esta clínica y siempre recibo la mejor atención. Las instalaciones son modernas y limpias."
+        name: "Carlos Rodríguez",
+        position: "Paciente"
     },
     {
-        id: 3,
-        name: "Ana Martínez",
-        position: "Madre de paciente",
+        content: "Atención personalizada y profesional. Siempre puntual y con una sonrisa.",
         avatar: "./images/ana.png",
-        content: "El servicio pediátrico es excepcional. Mi hija se siente cómoda y los doctores explican todo con paciencia. Muy recomendable."
-    }
-];
-
-// Base de datos de doctores
-const doctors = [
-    {
-        id: 1,
-        name: "Dr. Alejandro Morales",
-        specialty: "Cardiólogo",
-        image: "./images/m_alejandro.webp",
-        bio: "Especialista en enfermedades cardiovasculares con más de 15 años de experiencia."
-    },
-    {
-        id: 2,
-        name: "Dra. Sofía Hernández",
-        specialty: "Pediatra",
-        image: "./images/m_sofia.webp",
-        bio: "Pediatra certificada con especialización en atención neonatal y cuidados intensivos."
-    },
-    {
-        id: 3,
-        name: "Dr. Miguel Torres",
-        specialty: "Ortopedista",
-        image: "./images/m_miguel.webp",
-        bio: "Especialista en cirugía ortopédica y traumatología con enfoque en medicina deportiva."
+        name: "Ana Martínez",
+        position: "Familiar"
     }
 ];

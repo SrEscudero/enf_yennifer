@@ -1,358 +1,404 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>True Healthcare For Your Family</title>
+    
+    <title>Enf. Yennifer Blanco - Serviços de Enfermagem em Domicílio em Passo Fundo</title>
+    <meta name="description" content="Atendimento médico profissional, personalizado e humanizado em domicílio em Passo Fundo - RS.">
+    <meta name="author" content="Kelvis Tech">
+    
+    <meta property="og:title" content="Enf. Yennifer Blanco - Enfermagem em Domicílio">
+    <meta property="og:description" content="Atendimento médico profissional e humanizado no conforto do seu lar em Passo Fundo - RS.">
+    <meta property="og:image" content="./images/hero_desktop.webp">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-heartbeat"></i>
-                <span>MediCare</span>
+                <i class="fas fa-user-nurse"></i>
+                <span>Enf. Yennifer</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                <li><a href="#doctores" class="nav-link">Doctores</a></li>
-                <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#inicio" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="#nosotros" class="nav-link" data-i18n="nav_about">Sobre Mí</a></li>
+                <li><a href="#servicios" class="nav-link" data-i18n="nav_services">Servicios</a></li>
+                <li><a href="#beneficios" class="nav-link" data-i18n="nav_benefits">Beneficios</a></li>
+                <li><a href="#testimonios" class="nav-link" data-i18n="nav_testimonials">Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
             </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            
+            <div class="lang-switch">
+                <button id="btn-pt" class="lang-btn active" onclick="changeLanguage('pt')">PT</button>
+                <button id="btn-es" class="lang-btn" onclick="changeLanguage('es')">ES</button>
             </div>
+            
+            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </nav>
 
-<!-- Hero Section -->
-<section id="inicio" class="hero-section">
-  <picture class="hero-bg">
-    <!-- Imagen para pantallas grandes -->
-    <source media="(min-width: 768px)" srcset="./images/hero_desktop.webp" type="image/webp">
-    <!-- Imagen para móviles -->
-    <img src="./images/hero_mobile.webp" alt="Atención médica familiar en clínica moderna" loading="lazy">
-  </picture>
+    <section id="inicio" class="hero-section hero-column-layout">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 data-i18n="hero_title">Servicios de Enfermería a Domicilio</h1>
+                <p data-i18n="hero_desc">Atención médica profesional, personalizada y compasiva para la pronta recuperación de tus seres queridos en la comodidad de su hogar en Passo Fundo - RS.</p>
+                
+                <div class="hero-btns">
+                    <a href="https://wa.me/555499168720" target="_blank" class="btn-primary" data-i18n="hero_btn_book">Agendar Cita</a>
+                    <a href="#servicios" class="btn-secondary" data-i18n="hero_btn_services">Ver Servicios</a>
+                </div>
 
-  <div class="hero-container">
-    <div class="hero-content">
-      <h1>Atención Médica para tu familia</h1>
-      <p>La salud y el bienestar de nuestros pacientes y su equipo de atención médica siempre serán nuestra prioridad, por lo que seguimos las mejores prácticas de limpieza.</p>
-      
-      <div class="features">
-        <div class="feature">
-          <i class="fas fa-stethoscope"></i>
-          <span>Exámenes</span>
-        </div>
-        <div class="feature">
-          <i class="fas fa-prescription-bottle-alt"></i>
-          <span>Recetas</span>
-        </div>
-        <div class="feature">
-          <i class="fas fa-heartbeat"></i>
-          <span>Cardiología</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-home"></i>
+                        <span data-i18n="hero_feat_home">Atención a domicilio</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-heartbeat"></i>
+                        <span data-i18n="hero_feat_custom">Cuidados personalizados</span>
+                    </div>
+                </div>
+            </div>
 
+            <div class="hero-image-container">
+                <picture class="hero-subject">
+                    <source media="(max-width: 768px)" srcset="./images/hero_mobile.webp">
+                    <img src="./images/yennifer.webp" alt="Enfermera Yennifer Blanco realizando atención médica" fetchpriority="high" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                </picture>
+                <div class="image-decor"></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Cards Section -->
-   <section class="cards-section">
+    <section class="cards-section">
         <div class="container">
             <div class="cards-container">
                 <div class="card card-1">
-                    <i class="fas fa-ambulance card-icon"></i>
-                    <h3>Casos de Emergencia</h3>
-                    <p>No dude en contactar a nuestro personal de recepción en cualquier momento.</p>
+                    <i class="fas fa-phone-alt card-icon"></i>
+                    <h3 data-i18n="card1_title">Contacto Directo</h3>
+                    <p data-i18n="card1_desc">Llama o escribe al WhatsApp para agendar una visita médica.</p>
                 </div>
                 <div class="card card-2">
-                    <i class="fas fa-user-md card-icon"></i>
-                    <h3>Horario de Doctores</h3>
-                    <p>Médicos calificados disponibles las 24 horas, consulte nuestro horario.</p>
+                    <i class="fas fa-user-nurse card-icon"></i>
+                    <h3 data-i18n="card2_title">Profesionalismo</h3>
+                    <p data-i18n="card2_desc">Técnica de enfermería capacitada para cuidados complejos.</p>
                 </div>
                 <div class="card card-3">
                     <i class="fas fa-clock card-icon"></i>
-                    <h3>Horario de Atención</h3>
-                    <p>Lunes - Viernes 8:00 - 19:00 hrs</p>
+                    <h3 data-i18n="card3_title">Disponibilidad</h3>
+                    <p data-i18n="card3_desc">Horarios flexibles según las necesidades del paciente.</p>
                 </div>
                 <div class="card card-4">
                     <i class="fas fa-map-marker-alt card-icon"></i>
-                    <h3>Ubicación y Direcciones</h3>
-                    <p>2507 Beverley Rd Brooklyn, Nueva York 11794 Estados Unidos.</p>
+                    <h3 data-i18n="card4_title">Ubicación</h3>
+                    <p data-i18n="card4_desc">Servicios disponibles en toda la ciudad de Passo Fundo - RS.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="nosotros" class="about-section">
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="./images/about.webp">
+                    <img src="./images/conoce.webp" alt="Atención médica profesional y equipos" loading="lazy" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
                 </div>
-                
+
                 <div class="about-text">
-                    <h2>Sobre Nuestra Clínica</h2>
-                    <p>Somos un centro médico comprometido con brindar la más alta calidad en atención médica para toda la familia. Con más de 15 años de experiencia, nuestro equipo de profesionales altamente calificados está dedicado a su bienestar.</p>
-                    
-                    <p>Nuestra misión es proporcionar atención compasiva y personalizada utilizando tecnología médica de vanguardia en un ambiente cálido y acogedor.</p>
-                    
+                    <h2 data-i18n="about_title">Conoce a Yennifer Blanco</h2>
+                    <p data-i18n="about_p1">Como Técnica de Enfermería profesional, mi compromiso es brindar atención de la más alta calidad en la comodidad de tu hogar. Entiendo que la recuperación y el cuidado son más efectivos en un entorno familiar y tranquilo.</p>
+                    <p data-i18n="about_p2">Cuento con la capacitación técnica y la empatía necesaria para manejar desde el cuidado preventivo hasta la atención de pacientes con necesidades complejas, garantizando siempre tu bienestar.</p>
+
                     <div class="about-features">
                         <div class="about-feature">
-                            <i class="fas fa-user-md"></i>
+                            <i class="fas fa-house-user"></i>
                             <div>
-                                <h4>Médicos Certificados</h4>
-                                <p>Contamos con especialistas en diversas áreas médicas</p>
+                                <h4 data-i18n="about_feat1_title">Atención Domiciliaria</h4>
+                                <p data-i18n="about_feat1_desc">Cuidados profesionales sin salir de tu hogar en Passo Fundo.</p>
                             </div>
                         </div>
-                        
+
                         <div class="about-feature">
-                            <i class="fas fa-clinic-medical"></i>
+                            <i class="fas fa-hand-holding-medical"></i>
                             <div>
-                                <h4>Instalaciones Modernas</h4>
-                                <p>Equipamiento de última generación para su diagnóstico</p>
+                                <h4 data-i18n="about_feat2_title">Cuidado Empático</h4>
+                                <p data-i18n="about_feat2_desc">Trato humano, respetuoso y dedicado para cada paciente.</p>
                             </div>
                         </div>
-                        
+
                         <div class="about-feature">
                             <i class="fas fa-clock"></i>
                             <div>
-                                <h4>Horario Extendido</h4>
-                                <p>Atención en horarios convenientes para usted</p>
+                                <h4 data-i18n="about_feat3_title">Horarios Flexibles</h4>
+                                <p data-i18n="about_feat3_desc">Adaptabilidad total a las rutinas y necesidades de la familia.</p>
                             </div>
                         </div>
-                        
+
                         <div class="about-feature">
-                            <i class="fas fa-ambulance"></i>
+                            <i class="fas fa-notes-medical"></i>
                             <div>
-                                <h4>Servicio de Urgencias</h4>
-                                <p>Atención inmediata las 24 horas del día</p>
+                                <h4 data-i18n="about_feat4_title">Seguimiento Riguroso</h4>
+                                <p data-i18n="about_feat4_desc">Control exacto de tratamientos y signos vitales.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <a href="#contacto" class="btn-primary">Conoce Más Sobre Nosotros</a>
+
+                    <a href="#contacto" class="btn-primary" data-i18n="about_btn">Agenda una Evaluación</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Doctors Section -->
-    <section id="doctores" class="doctors-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nuestros Doctores Especialistas</h2>
-                <p>Contamos con un equipo de profesionales altamente calificados</p>
-            </div>
-            
-            <div class="doctors-container" id="doctors-container">
-                <!-- Los doctores se cargarán dinámicamente desde JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
     <section id="servicios" class="services-section">
         <div class="container">
             <div class="section-header">
-                <h2>Nuestros Servicios Médicos</h2>
-                <p>Ofrecemos una amplia gama de servicios para cuidar de su salud</p>
+                <h2 data-i18n="serv_title">Servicios de Enfermería</h2>
+                <p data-i18n="serv_subtitle">Atención especializada y procedimientos técnicos en su hogar</p>
             </div>
-            
+
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-heart"></i>
-                    <h3>Cardiología</h3>
-                    <p>Especialistas en el cuidado del corazón y sistema cardiovascular.</p>
+                    <i class="fas fa-stethoscope"></i>
+                    <h3 data-i18n="serv1_title">Toma de signos vitales</h3>
+                    <p data-i18n="serv1_desc">Monitoreo constante de presión arterial, temperatura, frecuencia cardíaca y respiratoria.</p>
                 </div>
-                
+
                 <div class="service-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurología</h3>
-                    <p>Diagnóstico y tratamiento de enfermedades del sistema nervioso.</p>
+                    <i class="fas fa-syringe"></i>
+                    <h3 data-i18n="serv2_title">Administración de medicamentos</h3>
+                    <p data-i18n="serv2_desc">Aplicación de tratamientos vía intravenosa (IV) e intramuscular (IM) con prescripción médica.</p>
                 </div>
-                
+
                 <div class="service-card">
-                    <i class="fas fa-baby"></i>
-                    <h3>Pediatría</h3>
-                    <p>Cuidado especializado para la salud de sus hijos.</p>
+                    <i class="fas fa-band-aid"></i>
+                    <h3 data-i18n="serv3_title">Curación de heridas</h3>
+                    <p data-i18n="serv3_desc">Tratamiento y limpieza profesional de heridas, incluyendo retiro de puntos.</p>
                 </div>
-                
+
                 <div class="service-card">
-                    <i class="fas fa-bone"></i>
-                    <h3>Ortopedia</h3>
-                    <p>Tratamiento de lesiones y enfermedades del sistema musculoesquelético.</p>
+                    <i class="fas fa-lungs"></i>
+                    <h3 data-i18n="serv4_title">Pacientes ventilados</h3>
+                    <p data-i18n="serv4_desc">Manejo técnico y especializado de pacientes que requieren soporte ventilatorio.</p>
                 </div>
-                
+
                 <div class="service-card">
-                    <i class="fas fa-eye"></i>
-                    <h3>Oftalmología</h3>
-                    <p>Cuidado integral de la visión y salud ocular.</p>
+                    <i class="fas fa-procedures"></i>
+                    <h3 data-i18n="serv5_title">Traqueostomía y gastrostomía</h3>
+                    <p data-i18n="serv5_desc">Cuidados específicos, limpieza y manejo de pacientes con dispositivos médicos.</p>
                 </div>
-                
+
                 <div class="service-card">
-                    <i class="fas fa-tooth"></i>
-                    <h3>Odontología</h3>
-                    <p>Servicios dentales completos para toda la familia.</p>
+                    <i class="fas fa-user-md"></i>
+                    <h3 data-i18n="serv6_title">Cuidados posquirúrgicos</h3>
+                    <p data-i18n="serv6_desc">Acompañamiento y cuidados personalizados durante la recuperación de cirugías.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <section id="beneficios" class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="ben_title">Ventajas del Cuidado en Casa</h2>
+                <p data-i18n="ben_subtitle">Descubre por qué la recuperación a domicilio es la mejor opción para tus seres queridos</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 data-i18n="ben1_title">Comodidad y Calor de Hogar</h3>
+                        <p data-i18n="ben1_desc">Estar en un entorno familiar y conocido reduce la ansiedad del paciente, favoreciendo un estado mental positivo que acelera el proceso de sanación.</p>
+                    </div>
+                    <div class="benefit-overlay"></div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 data-i18n="ben2_title">Menor Riesgo de Infecciones</h3>
+                        <p data-i18n="ben2_desc">Al evitar las visitas constantes a centros hospitalarios, se reduce drásticamente la exposición a virus y bacterias intrahospitalarias.</p>
+                    </div>
+                    <div class="benefit-overlay"></div>
+                </div>
+
+                <div class="curiosity-banner">
+                    <div class="curiosity-pulse">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="curiosity-text">
+                        <h3 data-i18n="ben_curiosity_title">¿Sabías qué?</h3>
+                        <p data-i18n="ben_curiosity_desc">Estudios médicos demuestran que los pacientes que reciben cuidados en su propio hogar reportan un <strong>50% menos de estrés</strong>, duermen mejor y presentan una recuperación clínica mucho más rápida y efectiva en comparación con internaciones prolongadas.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 data-i18n="ben3_title">Atención 100% Exclusiva</h3>
+                        <p data-i18n="ben3_desc">A diferencia de un hospital, el paciente no comparte la atención con otros. El monitoreo es constante, directo y enfocado únicamente en sus necesidades.</p>
+                    </div>
+                    <div class="benefit-overlay"></div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 data-i18n="ben4_title">Integración Familiar</h3>
+                        <p data-i18n="ben4_desc">Permite a la familia estar presente y participar activamente en la recuperación, recibiendo educación directa sobre el cuidado del paciente.</p>
+                    </div>
+                    <div class="benefit-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="testimonios" class="testimonials-section">
         <div class="container">
             <div class="section-header">
-                <h2>Testimonios de Nuestros Pacientes</h2>
-                <p>Lo que nuestros pacientes dicen sobre nuestra atención</p>
+                <h2 data-i18n="test_title">Testimonios de Pacientes</h2>
+                <p data-i18n="test_subtitle">La tranquilidad y satisfacción de las familias es mi mayor recomendación</p>
             </div>
-            
+
             <div class="testimonials-container" id="testimonials-container">
-                <!-- Los testimonios se cargarán dinámicamente desde db.js -->
+                <noscript>
+                    <p style="text-align: center;">Por favor, habilita JavaScript para ver las reseñas de nuestros pacientes.</p>
+                </noscript>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contacto" class="contact-section">
+    <section id="contacto" class="contact-section-modern">
         <div class="container">
             <div class="section-header">
-                <h2>Contáctenos</h2>
-                <p>Estamos aquí para responder sus preguntas</p>
+                <h2 data-i18n="cont_title">Contáctame</h2>
+                <p data-i18n="cont_subtitle">Estoy aquí para responder tus dudas y evaluar tus necesidades de cuidado</p>
             </div>
             
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Dirección</h3>
-                            <p>2507 Beverley Rd Brooklyn, Nueva York 11794</p>
-                        </div>
-                    </div>
+            <div class="contact-wrapper">
+                <div class="contact-info-panel">
+                    <h3 data-i18n="cont_info_title">Información de Contacto</h3>
+                    <p data-i18n="cont_info_desc">No dudes en comunicarte conmigo. Responderé a tu solicitud lo más pronto posible para agendar tu visita.</p>
                     
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Teléfono</h3>
-                            <p>+1 (555) 123-4567</p>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 data-i18n="cont_area_title">Área de Atención</h4>
+                                <p data-i18n="cont_area_desc">Passo Fundo - RS (A domicilio)</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>info@medicare.com</p>
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                            <div>
+                                <h4 data-i18n="cont_phone_title">Teléfono / WhatsApp</h4>
+                                <p>(54) 99168-720</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>Horario de Atención</h3>
-                            <p>Lunes - Viernes: 8:00 - 19:00</p>
-                            <p>Sábados: 9:00 - 14:00</p>
+                        <div class="info-item">
+                            <div class="icon-box"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4 data-i18n="cont_avail_title">Disponibilidad</h4>
+                                <p data-i18n="cont_avail_desc">Lunes a Domingo (Previa Cita)</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-form">
+                <div class="contact-form-panel">
                     <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Nombre completo" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="formNombre" data-i18n="form_label_name">Tu Nombre</label>
+                                <input type="text" id="formNombre" data-i18n-placeholder="form_place_name" placeholder="Ej. Carlos Silva" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formTelefono" data-i18n="form_label_phone">Tu WhatsApp</label>
+                                <input type="tel" id="formTelefono" data-i18n-placeholder="form_place_phone" placeholder="Ej. (54) 90000-0000" required>
+                            </div>
                         </div>
-                        
                         <div class="form-group">
-                            <input type="email" placeholder="Correo electrónico" required>
+                            <label for="formCorreo" data-i18n="form_label_email">Tu Correo (Opcional)</label>
+                            <input type="email" id="formCorreo" data-i18n-placeholder="form_place_email" placeholder="correo@ejemplo.com">
                         </div>
-                        
                         <div class="form-group">
-                            <input type="tel" placeholder="Teléfono">
+                            <label for="formMensaje" data-i18n="form_label_msg">¿Cómo puedo ayudarte?</label>
+                            <textarea id="formMensaje" data-i18n-placeholder="form_place_msg" placeholder="Describe brevemente el tipo de cuidado o servicio que necesitas..." rows="4" required></textarea>
                         </div>
-                        
-                        <div class="form-group">
-                            <textarea placeholder="Mensaje" rows="5" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                        <button type="submit" class="btn-primary btn-block" data-i18n="form_btn">Enviar Mensaje <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer-modern">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>MediCare</h3>
-                    <p>Su salud es nuestra prioridad. Brindamos atención médica de calidad para toda la familia.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2><i class="fas fa-user-nurse" style="color: var(--secondary-color); margin-right: 10px;"></i>Enf. Yennifer</h2>
+                    <p data-i18n="foot_brand_desc">Atención de enfermería compasiva, profesional y de calidad, llevada directamente a la comodidad de tu hogar.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/555499168720" class="social-icon whatsapp" target="_blank" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon" aria-label="Visitar Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Enlaces Rápidos</h3>
+                <div class="footer-links">
+                    <h3 data-i18n="foot_explore">Explorar</h3>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#doctores">Doctores</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
+                        <li><a href="#nosotros" data-i18n="nav_about">Sobre Mí</a></li>
+                        <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+                        <li><a href="#beneficios" data-i18n="nav_benefits">Beneficios</a></li>
+                        <li><a href="#testimonios" data-i18n="nav_testimonials">Testimonios</a></li>
+                        <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Servicios</h3>
+                <div class="footer-links">
+                    <h3 data-i18n="foot_services">Servicios</h3>
                     <ul>
-                        <li><a href="#">Cardiología</a></li>
-                        <li><a href="#">Neurología</a></li>
-                        <li><a href="#">Pediatría</a></li>
-                        <li><a href="#">Ortopedia</a></li>
-                        <li><a href="#">Emergencias</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Brooklyn, Nueva York</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@medicare.com</li>
+                        <li><a href="#servicios" data-i18n="foot_serv1">Signos Vitales</a></li>
+                        <li><a href="#servicios" data-i18n="foot_serv2">Medicamentos</a></li>
+                        <li><a href="#servicios" data-i18n="foot_serv3">Curación de heridas</a></li>
+                        <li><a href="#servicios" data-i18n="foot_serv4">Cuidados posquirúrgicos</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 MediCare. Todos los derechos reservados.</p>
+                <p data-i18n="foot_copy">&copy; 2026 Enf. Yennifer Blanco. Todos los derechos reservados.</p>
+                <p class="developer" data-i18n="foot_dev">Desarrollado con carinho por <strong>Kelvis Tech</strong></p>
             </div>
         </div>
     </footer>
 
-        <!-- Botón de WhatsApp Flotante -->
-    <a href="https://wa.me/15551234567?text=Hola,%20me%20gustaría%20agendar%20una%20cita" 
-       class="whatsapp-float" 
-       target="_blank">
+    <a href="https://wa.me/555499168720?text=Hola%20Yennifer,%20me%20gustaría%20solicitar%20información%20sobre%20tus%20servicios"
+        class="whatsapp-float" target="_blank" aria-label="Escribir al WhatsApp flotante">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="db.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
