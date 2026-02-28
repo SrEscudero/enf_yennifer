@@ -1,45 +1,104 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Enf. Yennifer Blanco - Serviços de Enfermagem em Domicílio em Passo Fundo</title>
-    <meta name="description" content="Atendimento médico profissional, personalizado e humanizado em domicílio em Passo Fundo - RS.">
+    <meta name="google-site-verification" content="xiNVDB0iAhzqbEXA2NendnUCAX-bP7Pjs0YRXtOgUqM" />
+    <title>Enf. Yennifer Blanco - Enfermagem em Domicílio em Passo Fundo</title>
+    <meta name="description" content="Enfermeira em Passo Fundo especializada em curativos, pós-operatório, administração de medicamentos e cuidados paliativos em domicílio. Atendimento humanizado com registro COREN ativo. Agende uma visita.">
     <meta name="author" content="Kelvis Tech">
-    
+    <meta name="keywords" content="enfermagem domiciliar Passo Fundo, cuidadora de idosos, curativos em casa, pós-cirúrgico, técnico de enfermagem, cuidados paliativos, administração de medicamentos">
+
+    <!-- FIX #10: og:image com URL absoluta -->
     <meta property="og:title" content="Enf. Yennifer Blanco - Enfermagem em Domicílio">
     <meta property="og:description" content="Atendimento médico profissional e humanizado no conforto do seu lar em Passo Fundo - RS.">
-    <meta property="og:image" content="./images/yennifer.webp">
+    <meta property="og:image" content="https://enf-yennifer.vercel.app/images/yennifer.webp">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enf-yennifer.vercel.app/">
+
+    <!-- FIX #11: Favicon -->
+    <link rel="canonical" href="https://enf-yennifer.vercel.app/" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilo.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Enf. Yennifer Blanco - Enfermagem em Domicílio",
+      "image": "https://enf-yennifer.vercel.app/images/yennifer.webp",
+      "@id": "https://enf-yennifer.vercel.app/",
+      "url": "https://enf-yennifer.vercel.app/",
+      "telephone": "+555499168720",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Passo Fundo",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -28.2628, 
+        "longitude": -52.4067
+      },
+      "description": "Atendimento médico profissional, personalizado e humanizado em domicílio na cidade de Passo Fundo - RS.",
+      "medicalSpecialty": "Nursing"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Quais serviços de enfermagem em domicílio são oferecidos em Passo Fundo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oferecemos administração de medicamentos, troca de curativos, monitoramento de sinais vitais, cuidados pós-cirúrgicos e acompanhamento de pacientes acamados no conforto da sua casa."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Qual é o horário de atendimento para os serviços de enfermagem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O atendimento é realizado de segunda a domingo, com horários flexíveis e agendamento prévio através do nosso WhatsApp."
+        }
+      }]
+    }
+    </script>
 </head>
 
 <body>
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-user-nurse"></i>
+                <i class="fas fa-user-nurse" aria-hidden="true"></i>
                 <span>Enf. Yennifer</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link" data-i18n="nav_home">Inicio</a></li>
-                <li><a href="#nosotros" class="nav-link" data-i18n="nav_about">Sobre Mí</a></li>
-                <li><a href="#servicios" class="nav-link" data-i18n="nav_services">Servicios</a></li>
-                <li><a href="#beneficios" class="nav-link" data-i18n="nav_benefits">Beneficios</a></li>
-                <li><a href="#testimonios" class="nav-link" data-i18n="nav_testimonials">Testimonios</a></li>
-                <li><a href="#contacto" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
+
+            <!-- FIX #15: aria-expanded para acessibilidade -->
+            <ul class="nav-menu" id="navMenu" role="navigation">
+                <li><a href="#inicio" class="nav-link" data-i18n="nav_home">Início</a></li>
+                <li><a href="#nosotros" class="nav-link" data-i18n="nav_about">Sobre Mim</a></li>
+                <li><a href="#servicios" class="nav-link" data-i18n="nav_services">Serviços</a></li>
+                <li><a href="#beneficios" class="nav-link" data-i18n="nav_benefits">Benefícios</a></li>
+                <li><a href="#testimonios" class="nav-link" data-i18n="nav_testimonials">Depoimentos</a></li>
+                <li><a href="#contacto" class="nav-link" data-i18n="nav_contact">Contato</a></li>
             </ul>
             
             <div class="lang-switch">
-                <button id="btn-pt" class="lang-btn active" onclick="changeLanguage('pt')">PT</button>
-                <button id="btn-es" class="lang-btn" onclick="changeLanguage('es')">ES</button>
+                <button id="btn-pt" class="lang-btn active" aria-label="Versão em Português">PT</button>
+                <button id="btn-es" class="lang-btn" aria-label="Versión en Español">ES</button>
             </div>
             
-            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+            <!-- FIX #15: aria-expanded + aria-controls -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -50,21 +109,22 @@
     <section id="inicio" class="hero-section hero-column-layout">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1 data-i18n="hero_title">Servicios de Enfermería a Domicilio</h1>
-                <p data-i18n="hero_desc">Atención médica profesional, personalizada y compasiva para la pronta recuperación de tus seres queridos en la comodidad de su hogar en Passo Fundo - RS.</p>
+                <h1 data-i18n="hero_title">Serviços de Enfermagem em Domicílio</h1>
+                <p data-i18n="hero_desc">Atendimento médico profissional, personalizado e humanizado para a rápida recuperação de seus entes queridos no conforto do seu lar em Passo Fundo - RS.</p>
                 
                 <div class="hero-btns">
-                    <a href="https://wa.me/555499168720" target="_blank" class="btn-primary" data-i18n="hero_btn_book">Agendar Cita</a>
-                    <a href="#servicios" class="btn-secondary" data-i18n="hero_btn_services">Ver Servicios</a>
+                    <!-- FIX #9: rel="noopener noreferrer" -->
+                    <a href="https://wa.me/555499168720?text=Olá%20Yennifer,%20gostaria%20de%20solicitar%20informações%20para%20agendar%20uma%20visita%20médica%20em%20domicílio." target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="hero_btn_book">Agendar Consulta</a>
+                    <a href="#servicios" class="btn-secondary" data-i18n="hero_btn_services">Ver Serviços</a>
                 </div>
 
                 <div class="features">
                     <div class="feature">
-                        <i class="fas fa-home"></i>
-                        <span data-i18n="hero_feat_home">Atención a domicilio</span>
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <span data-i18n="hero_feat_home">Atendimento em domicílio</span>
                     </div>
                     <div class="feature">
-                        <i class="fas fa-heartbeat"></i>
+                        <i class="fas fa-heartbeat" aria-hidden="true"></i>
                         <span data-i18n="hero_feat_custom">Cuidados personalizados</span>
                     </div>
                 </div>
@@ -73,35 +133,64 @@
             <div class="hero-image-container">
                 <picture class="hero-subject">
                     <source media="(max-width: 768px)" srcset="./images/yennifer.webp">
-                    <img src="./images/yennifer.webp" alt="Enfermera Yennifer Blanco realizando atención médica" fetchpriority="high" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <!-- FIX #8: width e height para evitar CLS -->
+                    <img src="./images/yennifer.webp" 
+                         alt="Técnica de enfermagem Yennifer Blanco realizando atendimento médico em domicílio em Passo Fundo RS"
+                         width="600" height="750"
+                         fetchpriority="high">
                 </picture>
-                <div class="image-decor"></div>
+                <div class="image-decor" aria-hidden="true"></div>
             </div>
         </div>
     </section>
 
-    <section class="cards-section">
+    <!-- TRUST BADGES -->
+    <section class="trust-badges" aria-label="Credenciais profissionais">
+        <div class="container">
+            <div class="badges-grid">
+                <div class="badge">
+                    <i class="fas fa-id-card" aria-hidden="true"></i>
+                    <span data-i18n="badge_1">Registro COREN Ativo</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-shield-virus" aria-hidden="true"></i>
+                    <span data-i18n="badge_2">Material 100% Descartável</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-hands-holding-child" aria-hidden="true"></i>
+                    <span data-i18n="badge_3">Atendimento Humanizado</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-box-open" aria-hidden="true"></i>
+                    <span data-i18n="badge_4">Material Estéril</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDS RÁPIDAS -->
+    <section class="cards-section" aria-label="Diferenciais">
         <div class="container">
             <div class="cards-container">
                 <div class="card card-1">
-                    <i class="fas fa-phone-alt card-icon"></i>
-                    <h3 data-i18n="card1_title">Contacto Directo</h3>
-                    <p data-i18n="card1_desc">Llama o escribe al WhatsApp para agendar una visita médica.</p>
+                    <i class="fas fa-phone-alt card-icon" aria-hidden="true"></i>
+                    <h3 data-i18n="card1_title">Contato Direto</h3>
+                    <p data-i18n="card1_desc">WhatsApp com resposta rápida</p>
                 </div>
                 <div class="card card-2">
-                    <i class="fas fa-user-nurse card-icon"></i>
-                    <h3 data-i18n="card2_title">Profesionalismo</h3>
-                    <p data-i18n="card2_desc">Técnica de enfermería capacitada para cuidados complejos.</p>
+                    <i class="fas fa-user-nurse card-icon" aria-hidden="true"></i>
+                    <h3 data-i18n="card2_title">Profissionalismo</h3>
+                    <p data-i18n="card2_desc">Técnica especializada COREN ativo</p>
                 </div>
                 <div class="card card-3">
-                    <i class="fas fa-clock card-icon"></i>
-                    <h3 data-i18n="card3_title">Disponibilidad</h3>
-                    <p data-i18n="card3_desc">Horarios flexibles según las necesidades del paciente.</p>
+                    <i class="fas fa-clock card-icon" aria-hidden="true"></i>
+                    <h3 data-i18n="card3_title">Disponibilidade</h3>
+                    <p data-i18n="card3_desc">Atendimento todos os dias</p>
                 </div>
                 <div class="card card-4">
-                    <i class="fas fa-map-marker-alt card-icon"></i>
-                    <h3 data-i18n="card4_title">Ubicación</h3>
-                    <p data-i18n="card4_desc">Servicios disponibles en toda la ciudad de Passo Fundo - RS.</p>
+                    <i class="fas fa-map-marker-alt card-icon" aria-hidden="true"></i>
+                    <h3 data-i18n="card4_title">Localização</h3>
+                    <p data-i18n="card4_desc">Passo Fundo e região</p>
                 </div>
             </div>
         </div>
@@ -111,49 +200,56 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="./images/conoce.webp" alt="Atención médica profesional y equipos" loading="lazy" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);">
+                    <!-- FIX #8: dimensões declaradas -->
+                    <img src="./images/conoce.webp" 
+                         alt="Profissional de enfermagem qualificada para cuidados pós-cirúrgicos e curativos em Passo Fundo"
+                         width="600" height="500"
+                         loading="lazy">
                 </div>
 
                 <div class="about-text">
-                    <h2 data-i18n="about_title">Conoce a Yennifer Blanco</h2>
-                    <p data-i18n="about_p1">Como Técnica de Enfermería profesional, mi compromiso es brindar atención de la más alta calidad en la comodidad de tu hogar. Entiendo que la recuperación y el cuidado son más efectivos en un entorno familiar y tranquilo.</p>
-                    <p data-i18n="about_p2">Cuento con la capacitación técnica y la empatía necesaria para manejar desde el cuidado preventivo hasta la atención de pacientes con necesidades complejas, garantizando siempre tu bienestar.</p>
+                    <h2 data-i18n="about_title">Conheça Yennifer Blanco</h2>
+                    <p data-i18n="about_p1">Como Técnica de Enfermagem profissional, meu compromisso é oferecer atendimento da mais alta qualidade no conforto da sua casa. Entendo que a recuperação e o cuidado são mais eficazes em um ambiente familiar e tranquilo.</p>
+                    <p data-i18n="about_p2">Conto com a capacitação técnica e a empatia necessárias para lidar desde o cuidado preventivo até o atendimento de pacientes com necessidades complexas, garantindo sempre o seu bem-estar.</p>
+                    
+                    <!-- FIX #2: placeholder mais claro, fácil de encontrar e substituir -->
+                    <div class="coren-badge">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <span><strong data-i18n="coren_label">Registro Profissional COREN-RS:</strong> <span id="coren-number"><!-- INSERIR NÚMERO COREN AQUI -->&nbsp;[Nº COREN]</span></span>
+                    </div>
 
                     <div class="about-features">
                         <div class="about-feature">
-                            <i class="fas fa-house-user"></i>
+                            <i class="fas fa-house-user" aria-hidden="true"></i>
                             <div>
-                                <h4 data-i18n="about_feat1_title">Atención Domiciliaria</h4>
-                                <p data-i18n="about_feat1_desc">Cuidados profesionales sin salir de tu hogar en Passo Fundo.</p>
+                                <h4 data-i18n="about_feat1_title">Atendimento Domiciliar</h4>
+                                <p data-i18n="about_feat1_desc">Cuidados profissionais sem sair de casa</p>
                             </div>
                         </div>
-
                         <div class="about-feature">
-                            <i class="fas fa-hand-holding-medical"></i>
+                            <i class="fas fa-hand-holding-medical" aria-hidden="true"></i>
                             <div>
                                 <h4 data-i18n="about_feat2_title">Cuidado Empático</h4>
-                                <p data-i18n="about_feat2_desc">Trato humano, respetuoso y dedicado para cada paciente.</p>
+                                <p data-i18n="about_feat2_desc">Tratamento humano e respeitoso</p>
                             </div>
                         </div>
-
                         <div class="about-feature">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                             <div>
-                                <h4 data-i18n="about_feat3_title">Horarios Flexibles</h4>
-                                <p data-i18n="about_feat3_desc">Adaptabilidad total a las rutinas y necesidades de la familia.</p>
+                                <h4 data-i18n="about_feat3_title">Horários Flexíveis</h4>
+                                <p data-i18n="about_feat3_desc">Adaptação à sua rotina</p>
                             </div>
                         </div>
-
                         <div class="about-feature">
-                            <i class="fas fa-notes-medical"></i>
+                            <i class="fas fa-notes-medical" aria-hidden="true"></i>
                             <div>
-                                <h4 data-i18n="about_feat4_title">Seguimiento Riguroso</h4>
-                                <p data-i18n="about_feat4_desc">Control exacto de tratamientos y signos vitales.</p>
+                                <h4 data-i18n="about_feat4_title">Acompanhamento Rigoroso</h4>
+                                <p data-i18n="about_feat4_desc">Controle exato do tratamento</p>
                             </div>
                         </div>
                     </div>
 
-                    <a href="#contacto" class="btn-primary" data-i18n="about_btn">Agenda una Evaluación</a>
+                    <a href="#contacto" class="btn-primary" data-i18n="about_btn">Agendar uma Avaliação</a>
                 </div>
             </div>
         </div>
@@ -162,45 +258,39 @@
     <section id="servicios" class="services-section">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="serv_title">Servicios de Enfermería</h2>
-                <p data-i18n="serv_subtitle">Atención especializada y procedimientos técnicos en su hogar</p>
+                <h2 data-i18n="serv_title">Serviços de Enfermagem</h2>
+                <p data-i18n="serv_subtitle">Atendimento especializado no seu lar</p>
             </div>
-
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-stethoscope"></i>
-                    <h3 data-i18n="serv1_title">Toma de signos vitales</h3>
-                    <p data-i18n="serv1_desc">Monitoreo constante de presión arterial, temperatura, frecuencia cardíaca y respiratoria.</p>
+                    <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                    <h3 data-i18n="serv1_title">Sinais vitais</h3>
+                    <p data-i18n="serv1_desc">Monitoramento de pressão, temperatura e frequências cardíaca/respiratória</p>
                 </div>
-
                 <div class="service-card">
-                    <i class="fas fa-syringe"></i>
-                    <h3 data-i18n="serv2_title">Administración de medicamentos</h3>
-                    <p data-i18n="serv2_desc">Aplicación de tratamientos vía intravenosa (IV) e intramuscular (IM) con prescripción médica.</p>
+                    <i class="fas fa-syringe" aria-hidden="true"></i>
+                    <h3 data-i18n="serv2_title">Medicamentos</h3>
+                    <p data-i18n="serv2_desc">Aplicação via intravenosa (IV) e intramuscular (IM) com prescrição</p>
                 </div>
-
                 <div class="service-card">
-                    <i class="fas fa-band-aid"></i>
-                    <h3 data-i18n="serv3_title">Curación de heridas</h3>
-                    <p data-i18n="serv3_desc">Tratamiento y limpieza profesional de heridas, incluyendo retiro de puntos.</p>
+                    <i class="fas fa-band-aid" aria-hidden="true"></i>
+                    <h3 data-i18n="serv3_title">Curativos</h3>
+                    <p data-i18n="serv3_desc">Tratamento profissional de feridas e retirada de pontos</p>
                 </div>
-
                 <div class="service-card">
-                    <i class="fas fa-lungs"></i>
-                    <h3 data-i18n="serv4_title">Pacientes ventilados</h3>
-                    <p data-i18n="serv4_desc">Manejo técnico y especializado de pacientes que requieren soporte ventilatorio.</p>
+                    <i class="fas fa-lungs" aria-hidden="true"></i>
+                    <h3 data-i18n="serv4_title">Ventilação</h3>
+                    <p data-i18n="serv4_desc">Manejo especializado de pacientes com suporte ventilatório</p>
                 </div>
-
                 <div class="service-card">
-                    <i class="fas fa-procedures"></i>
-                    <h3 data-i18n="serv5_title">Traqueostomía y gastrostomía</h3>
-                    <p data-i18n="serv5_desc">Cuidados específicos, limpieza y manejo de pacientes con dispositivos médicos.</p>
+                    <i class="fas fa-procedures" aria-hidden="true"></i>
+                    <h3 data-i18n="serv5_title">Traqueo/Gastrostomia</h3>
+                    <p data-i18n="serv5_desc">Cuidados específicos com dispositivos médicos</p>
                 </div>
-
                 <div class="service-card">
-                    <i class="fas fa-user-md"></i>
-                    <h3 data-i18n="serv6_title">Cuidados posquirúrgicos</h3>
-                    <p data-i18n="serv6_desc">Acompañamiento y cuidados personalizados durante la recuperación de cirugías.</p>
+                    <i class="fas fa-user-md" aria-hidden="true"></i>
+                    <h3 data-i18n="serv6_title">Pós-cirúrgico</h3>
+                    <p data-i18n="serv6_desc">Acompanhamento personalizado pós-cirurgia</p>
                 </div>
             </div>
         </div>
@@ -209,64 +299,87 @@
     <section id="beneficios" class="benefits-section">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="ben_title">Ventajas del Cuidado en Casa</h2>
-                <p data-i18n="ben_subtitle">Descubre por qué la recuperación a domicilio es la mejor opción para tus seres queridos</p>
+                <h2 data-i18n="ben_title">Vantagens do Cuidado em Casa</h2>
+                <p data-i18n="ben_subtitle">Recuperação mais rápida e humanizada</p>
             </div>
-
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-home" aria-hidden="true"></i></div>
                     <div class="benefit-content">
-                        <h3 data-i18n="ben1_title">Comodidad y Calor de Hogar</h3>
-                        <p data-i18n="ben1_desc">Estar en un entorno familiar y conocido reduce la ansiedad del paciente, favoreciendo un estado mental positivo que acelera el proceso de sanación.</p>
+                        <h3 data-i18n="ben1_title">Conforto do Lar</h3>
+                        <p data-i18n="ben1_desc">Ambiente familiar reduz ansiedade e acelera a cura</p>
                     </div>
-                    <div class="benefit-overlay"></div>
+                    <div class="benefit-overlay" aria-hidden="true"></div>
                 </div>
-
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-virus"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-shield-virus" aria-hidden="true"></i></div>
                     <div class="benefit-content">
-                        <h3 data-i18n="ben2_title">Menor Riesgo de Infecciones</h3>
-                        <p data-i18n="ben2_desc">Al evitar las visitas constantes a centros hospitalarios, se reduce drásticamente la exposición a virus y bacterias intrahospitalarias.</p>
+                        <h3 data-i18n="ben2_title">Menos Infecções</h3>
+                        <p data-i18n="ben2_desc">Evita exposição a bactérias hospitalares</p>
                     </div>
-                    <div class="benefit-overlay"></div>
+                    <div class="benefit-overlay" aria-hidden="true"></div>
                 </div>
 
-                <div class="curiosity-banner">
-                    <div class="curiosity-pulse">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
+                <div class="curiosity-banner" role="note">
+                    <div class="curiosity-pulse" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
                     <div class="curiosity-text">
-                        <h3 data-i18n="ben_curiosity_title">¿Sabías qué?</h3>
-                        <p data-i18n="ben_curiosity_desc">Estudios médicos demuestran que los pacientes que reciben cuidados en su propio hogar reportan un <strong>50% menos de estrés</strong>, duermen mejor y presentan una recuperación clínica mucho más rápida y efectiva en comparación con internaciones prolongadas.</p>
+                        <h3 data-i18n="ben_curiosity_title">Você sabia?</h3>
+                        <p data-i18n="ben_curiosity_desc">Pacientes em casa relatam <strong>50% menos estresse</strong> e recuperação mais rápida que em internações</p>
                     </div>
                 </div>
 
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-user-clock"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-user-clock" aria-hidden="true"></i></div>
                     <div class="benefit-content">
-                        <h3 data-i18n="ben3_title">Atención 100% Exclusiva</h3>
-                        <p data-i18n="ben3_desc">A diferencia de un hospital, el paciente no comparte la atención con otros. El monitoreo es constante, directo y enfocado únicamente en sus necesidades.</p>
+                        <h3 data-i18n="ben3_title">Atendimento Exclusivo</h3>
+                        <p data-i18n="ben3_desc">Monitoramento constante e focado só em você</p>
                     </div>
-                    <div class="benefit-overlay"></div>
+                    <div class="benefit-overlay" aria-hidden="true"></div>
                 </div>
-
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-people-arrows"></i>
-                    </div>
+                    <div class="benefit-icon"><i class="fas fa-people-arrows" aria-hidden="true"></i></div>
                     <div class="benefit-content">
-                        <h3 data-i18n="ben4_title">Integración Familiar</h3>
-                        <p data-i18n="ben4_desc">Permite a la familia estar presente y participar activamente en la recuperación, recibiendo educación directa sobre el cuidado del paciente.</p>
+                        <h3 data-i18n="ben4_title">Família Presente</h3>
+                        <p data-i18n="ben4_desc">Participação ativa e orientação direta aos familiares</p>
                     </div>
-                    <div class="benefit-overlay"></div>
+                    <div class="benefit-overlay" aria-hidden="true"></div>
                 </div>
+            </div>
+
+            <!-- FIX #12: botão com data-i18n para mudar idioma corretamente -->
+            <div class="benefits-cta">
+                <a href="https://wa.me/555499168720" class="btn-primary btn-large" target="_blank" rel="noopener noreferrer" data-i18n="ben_cta_btn">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar com Yennifer agora
+                </a>
+                <p class="cta-small" data-i18n="ben_cta_sub">Responde em menos de 1 hora</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="faq_title">Dúvidas Frequentes</h2>
+                <p data-i18n="faq_subtitle">Tire suas principais dúvidas</p>
+            </div>
+            <!-- FIX #14: FAQ com animação suave via CSS class -->
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary data-i18n="faq_q1">Formas de pagamento?</summary>
+                    <div class="faq-content" data-i18n="faq_a1">Aceitamos PIX, transferência bancária e dinheiro ao final da visita</div>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faq_q2">Horários disponíveis?</summary>
+                    <div class="faq-content" data-i18n="faq_a2">Segunda a Domingo, com horários agendados previamente</div>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faq_q3">Trazem equipamentos?</summary>
+                    <div class="faq-content" data-i18n="faq_a3">Sim, todos os equipamentos e materiais estéreis necessários</div>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="faq_q4">Atendem emergências?</summary>
+                    <div class="faq-content" data-i18n="faq_a4">Para emergências com risco de vida, ligue SAMU (192). Nosso foco é cuidado programado</div>
+                </details>
             </div>
         </div>
     </section>
@@ -274,13 +387,12 @@
     <section id="testimonios" class="testimonials-section">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="test_title">Testimonios de Pacientes</h2>
-                <p data-i18n="test_subtitle">La tranquilidad y satisfacción de las familias es mi mayor recomendación</p>
+                <h2 data-i18n="test_title">Depoimentos</h2>
+                <p data-i18n="test_subtitle">A satisfação das famílias é minha maior recomendação</p>
             </div>
-
             <div class="testimonials-container" id="testimonials-container">
                 <noscript>
-                    <p style="text-align: center;">Por favor, habilita JavaScript para ver las reseñas de nuestros pacientes.</p>
+                    <p style="text-align: center;">Por favor, habilite o JavaScript para ver as avaliações.</p>
                 </noscript>
             </div>
         </div>
@@ -289,61 +401,62 @@
     <section id="contacto" class="contact-section-modern">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="cont_title">Contáctame</h2>
-                <p data-i18n="cont_subtitle">Estoy aquí para responder tus dudas y evaluar tus necesidades de cuidado</p>
+                <h2 data-i18n="cont_title">Entre em Contato</h2>
+                <p data-i18n="cont_subtitle">Estou aqui para tirar suas dúvidas</p>
             </div>
-            
             <div class="contact-wrapper">
                 <div class="contact-info-panel">
-                    <h3 data-i18n="cont_info_title">Información de Contacto</h3>
-                    <p data-i18n="cont_info_desc">No dudes en comunicarte conmigo. Responderé a tu solicitud lo más pronto posible para agendar tu visita.</p>
-                    
+                    <h3 data-i18n="cont_info_title">Informações</h3>
+                    <p data-i18n="cont_info_desc">Responderei o mais rápido possível</p>
                     <div class="info-items">
                         <div class="info-item">
-                            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="icon-box"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
                             <div>
-                                <h4 data-i18n="cont_area_title">Área de Atención</h4>
-                                <p data-i18n="cont_area_desc">Passo Fundo - RS (A domicilio)</p>
+                                <h4 data-i18n="cont_area_title">Área</h4>
+                                <p data-i18n="cont_area_desc">Passo Fundo - RS (Domicílio)</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+                            <div class="icon-box"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
                             <div>
-                                <h4 data-i18n="cont_phone_title">Teléfono / WhatsApp</h4>
+                                <h4 data-i18n="cont_phone_title">WhatsApp</h4>
                                 <p>(54) 99168-720</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="icon-box"><i class="fas fa-clock"></i></div>
+                            <div class="icon-box"><i class="fas fa-clock" aria-hidden="true"></i></div>
                             <div>
-                                <h4 data-i18n="cont_avail_title">Disponibilidad</h4>
-                                <p data-i18n="cont_avail_desc">Lunes a Domingo (Previa Cita)</p>
+                                <h4 data-i18n="cont_avail_title">Disponibilidade</h4>
+                                <p data-i18n="cont_avail_desc">Segunda a Domingo (agendamento)</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form-panel">
-                    <form id="contactForm">
+                    <form id="contactForm" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="formNombre" data-i18n="form_label_name">Tu Nombre</label>
-                                <input type="text" id="formNombre" data-i18n-placeholder="form_place_name" placeholder="Ej. Carlos Silva" required>
+                                <label for="formNombre" data-i18n="form_label_name">Nome</label>
+                                <input type="text" id="formNombre" data-i18n-placeholder="form_place_name" placeholder="Ex. Carlos Silva" required autocomplete="name">
                             </div>
                             <div class="form-group">
-                                <label for="formTelefono" data-i18n="form_label_phone">Tu WhatsApp</label>
-                                <input type="tel" id="formTelefono" data-i18n-placeholder="form_place_phone" placeholder="Ej. (54) 90000-0000" required>
+                                <label for="formTelefono" data-i18n="form_label_phone">WhatsApp</label>
+                                <input type="tel" id="formTelefono" data-i18n-placeholder="form_place_phone" placeholder="(54) 90000-0000" required autocomplete="tel">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="formCorreo" data-i18n="form_label_email">Tu Correo (Opcional)</label>
-                            <input type="email" id="formCorreo" data-i18n-placeholder="form_place_email" placeholder="correo@ejemplo.com">
+                            <!-- FIX #4: e-mail com validação real -->
+                            <label for="formCorreo" data-i18n="form_label_email">E-mail (opcional)</label>
+                            <input type="email" id="formCorreo" data-i18n-placeholder="form_place_email" placeholder="email@exemplo.com" autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <label for="formMensaje" data-i18n="form_label_msg">¿Cómo puedo ayudarte?</label>
-                            <textarea id="formMensaje" data-i18n-placeholder="form_place_msg" placeholder="Describe brevemente el tipo de cuidado o servicio que necesitas..." rows="4" required></textarea>
+                            <label for="formMensaje" data-i18n="form_label_msg">Como posso ajudar?</label>
+                            <textarea id="formMensaje" data-i18n-placeholder="form_place_msg" placeholder="Descreva brevemente o serviço que precisa..." rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary btn-block" data-i18n="form_btn">Enviar Mensaje <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                        <button type="submit" class="btn-primary btn-block" id="submitBtn">
+                            <span data-i18n="form_btn">Enviar Mensagem</span> <i class="fas fa-paper-plane" style="margin-left: 8px;" aria-hidden="true"></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -354,51 +467,67 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <h2><i class="fas fa-user-nurse" style="color: var(--secondary-color); margin-right: 10px;"></i>Enf. Yennifer</h2>
-                    <p data-i18n="foot_brand_desc">Atención de enfermería compasiva, profesional y de calidad, llevada directamente a la comodidad de tu hogar.</p>
+                    <h2><i class="fas fa-user-nurse" style="color: var(--secondary-color); margin-right: 10px;" aria-hidden="true"></i>Enf. Yennifer</h2>
+                    <p data-i18n="foot_brand_desc">Cuidado humanizado e profissional no conforto do seu lar</p>
                     <div class="social-icons">
-                        <a href="https://wa.me/555499168720" class="social-icon whatsapp" target="_blank" aria-label="Contactar por WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon" aria-label="Visitar Instagram"><i class="fab fa-instagram"></i></a>
+                        <!-- FIX #9: rel="noopener noreferrer" -->
+                        <a href="https://wa.me/555499168720" class="social-icon whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Enf. Yennifer">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <!-- FIX #3: Instagram com placeholder claro -->
+                        <a href="#" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Enf. Yennifer" id="instagramLink" title="Instagram — adicionar link">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="footer-links">
                     <h3 data-i18n="foot_explore">Explorar</h3>
                     <ul>
-                        <li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
-                        <li><a href="#nosotros" data-i18n="nav_about">Sobre Mí</a></li>
-                        <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
-                        <li><a href="#beneficios" data-i18n="nav_benefits">Beneficios</a></li>
-                        <li><a href="#testimonios" data-i18n="nav_testimonials">Testimonios</a></li>
-                        <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
+                        <li><a href="#inicio" data-i18n="nav_home">Início</a></li>
+                        <li><a href="#nosotros" data-i18n="nav_about">Sobre Mim</a></li>
+                        <li><a href="#servicios" data-i18n="nav_services">Serviços</a></li>
+                        <li><a href="#beneficios" data-i18n="nav_benefits">Benefícios</a></li>
+                        <li><a href="#testimonios" data-i18n="nav_testimonials">Depoimentos</a></li>
+                        <li><a href="#contacto" data-i18n="nav_contact">Contato</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h3 data-i18n="foot_services">Servicios</h3>
+                    <h3 data-i18n="foot_services">Serviços</h3>
                     <ul>
-                        <li><a href="#servicios" data-i18n="foot_serv1">Signos Vitales</a></li>
+                        <li><a href="#servicios" data-i18n="foot_serv1">Sinais Vitais</a></li>
                         <li><a href="#servicios" data-i18n="foot_serv2">Medicamentos</a></li>
-                        <li><a href="#servicios" data-i18n="foot_serv3">Curación de heridas</a></li>
-                        <li><a href="#servicios" data-i18n="foot_serv4">Cuidados posquirúrgicos</a></li>
+                        <li><a href="#servicios" data-i18n="foot_serv3">Curativos</a></li>
+                        <li><a href="#servicios" data-i18n="foot_serv4">Pós-cirúrgico</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p data-i18n="foot_copy">&copy; 2026 Enf. Yennifer Blanco. Todos los derechos reservados.</p>
-                <p class="developer" data-i18n="foot_dev">Desarrollado con carinho por <strong>Kelvis Tech</strong></p>
+                <p data-i18n="foot_copy">&copy; 2026 Enf. Yennifer Blanco. Todos os direitos reservados.</p>
+                <p class="developer" data-i18n="foot_dev">Desenvolvido por <strong>Kelvis Tech</strong></p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/555499168720?text=Hola%20Yennifer,%20me%20gustaría%20solicitar%20información%20sobre%20tus%20servicios"
-        class="whatsapp-float" target="_blank" aria-label="Escribir al WhatsApp flotante">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo da página">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <div class="whatsapp-container">
+        <div class="wa-bubble" id="waBubble" role="status">
+            <span data-i18n="wa_bubble">👋 Precisa de ajuda em casa? Me chame</span>
+            <button class="wa-bubble-close" onclick="closeWaBubble(event)" aria-label="Fechar mensagem">&times;</button>
+        </div>
+        <!-- FIX #9: rel="noopener noreferrer" -->
+        <a href="https://wa.me/555499168720?text=Olá%20Yennifer" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar via WhatsApp com Enf. Yennifer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span data-i18n="wa_float_label">Fale Conosco</span>
+        </a>
+    </div>
 
     <script src="db.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>

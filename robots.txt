@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Bloquear arquivos desnecessários para indexação
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /db.js
+
+# Sitemap
+Sitemap: https://enf-yennifer.vercel.app/sitemap.xml

@@ -8,17 +8,17 @@
     --accent-color: #FCE7F3; /* Fondo suave rosado */
     --dark-blue: #1F2937; /* Gris oscuro para textos principales */
     
-    /* Colores neutrales */
+    /* Colores neutrales - MEJORADOS para contraste */
     --white: #ffffff;
     --light-gray: #f8f9fa;
     --medium-gray: #e9ecef;
-    --dark-gray: #4b5563;
-    --text-color: #374151;
+    --dark-gray: #1f2937; /* MÁS OSCURO para mejor contraste (antes #4b5563) */
+    --text-color: #111827; /* MÁS OSCURO para textos principales */
     
     /* Tipografía */
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
-    /* Espaciado */
+    /* Espaciado - OPTIMIZADO */
     --section-padding: 80px 0;
     --container-width: 1200px;
     
@@ -46,9 +46,19 @@
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(190, 18, 60, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(190, 18, 60, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(190, 18, 60, 0); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
 }
 
 /* =========================================
@@ -62,6 +72,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px; /* Base font size fijado */
 }
 
 body {
@@ -72,6 +83,13 @@ body {
     overflow-x: hidden;
 }
 
+/* Tipografía base mejorada */
+p {
+    font-size: 1.1rem; /* Texto más grande y legible */
+    line-height: 1.7;
+    color: var(--dark-gray);
+}
+
 .container {
     width: 100%;
     max-width: var(--container-width);
@@ -80,7 +98,7 @@ body {
 }
 
 /* =========================================
-   NAVBAR
+   NAVBAR & MENÚ
    ========================================= */
 .navbar {
     position: fixed;
@@ -91,7 +109,7 @@ body {
     box-shadow: var(--shadow-light);
     z-index: 1000;
     padding: 15px 0;
-    transition: all 0.3s ease;
+    transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
 }
 
 .navbar-scrolled {
@@ -139,9 +157,7 @@ body {
     color: var(--primary-color);
 }
 
-/* =========================================
-   MENÚ HAMBURGUESA (MÓVIL)
-   ========================================= */
+/* Menú Hamburguesa Elegante */
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -150,8 +166,7 @@ body {
     height: 20px;
     cursor: pointer;
     z-index: 1001;
-    /* Reseteo del botón por defecto del navegador */
-    background: transparent; 
+    background: transparent;
     border: none;
     padding: 0;
     margin-left: 10px;
@@ -160,25 +175,26 @@ body {
 .bar {
     width: 100%;
     height: 3px;
-    background-color: var(--primary-color); /* Usa el rojo elegante de la marca */
-    border-radius: 10px; /* Bordes redondeados para un look suave */
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animación con efecto rebote */
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Animación fluida para convertirse en "X" */
 .nav-toggle.active .bar:nth-child(1) {
     transform: translateY(8.5px) rotate(45deg);
 }
+
 .nav-toggle.active .bar:nth-child(2) {
     opacity: 0;
-    transform: translateX(10px); /* Se desliza hacia la derecha al desaparecer */
+    transform: translateX(10px);
 }
+
 .nav-toggle.active .bar:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
 }
 
 /* =========================================
-   SELECTOR DE IDIOMA (BILINGÜE)
+   SELECTOR DE IDIOMA
    ========================================= */
 .lang-switch {
     display: flex;
@@ -201,7 +217,7 @@ body {
 }
 
 .lang-btn:hover {
-    background: rgba(190, 18, 60, 0.1); /* Efecto hover suave con el color primario */
+    background: rgba(190, 18, 60, 0.1);
     transform: translateY(-2px);
 }
 
@@ -213,29 +229,7 @@ body {
 }
 
 /* =========================================
-   AJUSTES RESPONSIVOS PARA EL SELECTOR
-   ========================================= */
-@media (max-width: 1024px) {
-    .lang-switch {
-        /* En tablets y móviles, empujamos el selector hacia la izquierda del menú hamburguesa */
-        margin-right: auto;
-        margin-left: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .lang-switch {
-        margin-left: 10px;
-        gap: 4px;
-    }
-    .lang-btn {
-        padding: 4px 8px;
-        font-size: 0.75rem;
-    }
-}
-
-/* =========================================
-   HERO SECTION
+   HERO SECTION - MEJORADO
    ========================================= */
 .hero-column-layout {
     background-color: var(--accent-color);
@@ -324,9 +318,12 @@ body {
     max-height: 75vh;
     display: block;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: var(--shadow-heavy);
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 5px solid white;
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
 }
 
 .hero-subject img:hover {
@@ -347,13 +344,47 @@ body {
 }
 
 /* =========================================
-   CARDS RAPIDAS
+   UX MEJORA: INSIGNIAS DE CONFIANZA (TRUST BADGES)
+   ========================================= */
+.trust-badges {
+    background: var(--white);
+    padding: 30px 0;
+    border-bottom: 1px solid var(--medium-gray);
+    position: relative;
+    z-index: 1;  /* CORRIGIDO: era 10, causava sobreposição */
+}
+
+.badges-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: 1rem;
+}
+
+.badge i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* =========================================
+   CARDS RAPIDAS — CORRIGIDO
    ========================================= */
 .cards-section {
-    margin: -60px 0 0;
-    padding: 0 20px;
+    /* CORRIGIDO: margin -40px removido, agora é seção normal */
+    margin: 0;
+    padding: 50px 20px;
     position: relative;
-    z-index: 10;
+    z-index: 1;
+    background-color: var(--light-gray);
 }
 
 .cards-container {
@@ -391,8 +422,9 @@ body {
 }
 
 .card p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     opacity: 0.9;
+    color: var(--white);
 }
 
 .card-1 { background-color: var(--primary-color); }
@@ -401,7 +433,7 @@ body {
 .card-4 { background-color: var(--dark-blue); }
 
 /* =========================================
-   ABOUT SECTION
+   ABOUT SECTION - CON BADGE DE COREN
    ========================================= */
 .about-section {
     padding: var(--section-padding);
@@ -458,6 +490,33 @@ body {
     line-height: 1.8;
 }
 
+/* NUEVO: Badge de COREN */
+.coren-badge {
+    background: var(--accent-color);
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    border-left: 5px solid var(--primary-color);
+    font-size: 1.1rem;
+    display: inline-block;
+    width: auto;
+}
+
+.coren-badge i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.coren-badge span {
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.coren-badge strong {
+    color: var(--primary-color);
+}
+
 .about-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -483,6 +542,11 @@ body {
     margin-bottom: 5px;
 }
 
+.about-feature p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
 /* =========================================
    SERVICIOS SECTION
    ========================================= */
@@ -504,7 +568,7 @@ body {
 }
 
 .section-header p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--dark-gray);
     max-width: 600px;
     margin: 0 auto;
@@ -549,8 +613,13 @@ body {
     margin-bottom: 15px;
 }
 
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 /* =========================================
-   BENEFICIOS Y CURIOSIDADES SECTION
+   BENEFICIOS Y CURIOSIDADES
    ========================================= */
 .benefits-section {
     padding: var(--section-padding);
@@ -631,7 +700,7 @@ body {
 
 .benefit-content p {
     color: var(--dark-gray);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.7;
 }
 
@@ -711,11 +780,89 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     opacity: 0.95;
+    color: var(--white);
 }
 
 .curiosity-text strong {
     color: #ffb6c1;
     font-weight: 800;
+}
+
+/* NUEVO: CTA en beneficios */
+.benefits-cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-large {
+    font-size: 1.2rem;
+    padding: 18px 40px;
+}
+
+.cta-small {
+    margin-top: 15px;
+    color: var(--dark-gray);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   PREGUNTAS FRECUENTES (FAQ)
+   ========================================= */
+.faq-section {
+    padding: var(--section-padding);
+    background: var(--accent-color);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+details {
+    background: var(--white);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    box-shadow: var(--shadow-medium);
+    border: 1px solid rgba(190, 18, 60, 0.2);
+}
+
+summary {
+    padding: 20px 25px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+    content: '\f078';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    transition: transform 0.3s;
+    color: var(--primary-color);
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    padding: 0 25px 20px;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    animation: fadeIn 0.4s ease-out;
 }
 
 /* =========================================
@@ -764,6 +911,12 @@ body {
     margin-bottom: 20px;
     z-index: 1;
     position: relative;
+}
+
+.testimonial-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
 }
 
 .testimonial-author {
@@ -880,8 +1033,9 @@ body {
 
 .info-item p {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
     opacity: 0.85;
+    color: var(--white);
 }
 
 .contact-form-panel {
@@ -908,7 +1062,7 @@ body {
     margin-bottom: 8px;
     color: var(--dark-blue);
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .form-group input,
@@ -948,6 +1102,7 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(190, 18, 60, 0.3);
     text-align: center;
+    font-size: 1rem;
 }
 
 .btn-primary:hover {
@@ -968,6 +1123,7 @@ body {
     border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
     text-align: center;
+    font-size: 1rem;
 }
 
 .btn-secondary:hover {
@@ -987,41 +1143,6 @@ body {
     background-color: #25D366 !important;
     cursor: wait;
     opacity: 0.9;
-}
-
-/* =========================================
-   BOTÓN FLOTANTE WHATSAPP
-   ========================================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
-    color: var(--white);
-    padding: 15px 20px;
-    border-radius: 50px;
-    box-shadow: var(--shadow-medium);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    z-index: 999;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    font-weight: 600;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-float:hover {
-    background: #128C7E;
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-heavy);
-    color: var(--white);
-    animation: none;
-}
-
-.whatsapp-float i {
-    font-size: 1.8rem;
 }
 
 /* =========================================
@@ -1056,6 +1177,7 @@ body {
     margin-bottom: 25px;
     line-height: 1.8;
     max-width: 380px;
+    font-size: 1rem;
 }
 
 .social-icons {
@@ -1109,6 +1231,7 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
+    font-size: 1rem;
 }
 
 .footer-links ul li a:hover {
@@ -1134,7 +1257,146 @@ body {
 }
 
 /* =========================================
-   CLASES PARA ANIMACIONES Y EFECTOS
+   ELEMENTOS FLOTANTES & UX
+   ========================================= */
+
+/* 1. Barra de Progreso */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--primary-color);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* 2. Botón Volver Arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--dark-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-medium);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* 3. Contenedor WhatsApp y Botón Flotante */
+.whatsapp-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.whatsapp-float {
+    background: #25D366;
+    color: var(--white);
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-medium);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background: #128C7E;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+    color: var(--white);
+    animation: none;
+}
+
+.whatsapp-float i {
+    font-size: 1.8rem;
+}
+
+/* 4. Burbuja de WhatsApp */
+.wa-bubble {
+    background: var(--white);
+    padding: 12px 18px;
+    border-radius: 12px;
+    border-bottom-right-radius: 4px;
+    box-shadow: var(--shadow-heavy);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.wa-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 25px;
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: var(--white) transparent transparent transparent;
+}
+
+.wa-bubble.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.wa-bubble-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #9ca3af;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.wa-bubble-close:hover { color: var(--primary-color); }
+
+/* =========================================
+   CLASES PARA ANIMACIONES Y ESTADOS
    ========================================= */
 .animate-ready {
     opacity: 0;
@@ -1147,72 +1409,148 @@ body {
     transform: translateY(0) !important;
 }
 
+/* =========================================
+   NOTIFICACIONES PERSONALIZADAS
+   ========================================= */
+.custom-notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    font-weight: 500;
+    animation: slideInRight 0.3s ease-out;
+    max-width: 350px;
+    font-family: var(--font-primary);
+}
+
+.custom-notification.success {
+    background: #4CAF50;
+    color: white;
+}
+
+.custom-notification.error {
+    background: #f44336;
+    color: white;
+}
+
+.custom-notification.info {
+    background: #2196F3;
+    color: white;
+}
 
 /* =========================================
-   DISEÑO RESPONSIVO UNIFICADO (CRÍTICO)
+   DISEÑO RESPONSIVO OPTIMIZADO
    ========================================= */
 
+/* Tablets y pantallas medianas */
 @media (max-width: 1024px) {
-    /* Navbar Menú Móvil Mejorado */
+    :root {
+        --section-padding: 70px 0;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 68px; /* Altura aproximada del navbar */
+        top: 68px;
         flex-direction: column;
         background-color: var(--white);
         width: 100%;
-        height: calc(100vh - 68px); /* Permite scroll si hay muchos items */
+        height: calc(100vh - 68px);
         overflow-y: auto;
         text-align: center;
         transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         box-shadow: var(--shadow-medium);
         padding: 40px 0 100px 0;
     }
+    
     .nav-menu.active { left: 0; }
     .nav-toggle { display: flex; }
     
-    /* Grillas intermedias */
-    .cards-container { grid-template-columns: repeat(2, 1fr); }
-    .about-content { grid-template-columns: 1fr; gap: 40px; }
+    .lang-switch {
+        margin-right: auto;
+        margin-left: 20px;
+    }
+
+    .cards-container { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
     
-    /* Footer */
-    .footer-top { grid-template-columns: 1fr 1fr; }
-    .footer-brand { grid-column: span 2; }
+    .about-content { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    
+    .footer-top { 
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .footer-brand { 
+        grid-column: span 2; 
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
 }
 
+/* Móviles grandes y tablets pequeñas */
 @media (max-width: 768px) {
-    /* Hero */
+    :root {
+        --section-padding: 60px 0;
+    }
+
     .hero-column-layout { 
         padding: 120px 0 60px 0; 
         min-height: auto;
     }
+    
     .hero-container {
         flex-direction: column;
         text-align: center;
         gap: 30px;
     }
-    .hero-content { margin-bottom: 20px; }
-    .hero-content h1 { font-size: 2.6rem; }
-    .hero-btns { justify-content: center; }
-    .features { justify-content: center; }
+    
+    .hero-content { 
+        margin-bottom: 20px; 
+    }
+    
+    .hero-content h1 { 
+        font-size: 2.6rem; 
+    }
+    
+    .hero-btns { 
+        justify-content: center; 
+    }
+    
+    .features { 
+        justify-content: center; 
+    }
     
     .hero-image-container {
-        order: 2; /* Asegura que la imagen vaya debajo del texto */
+        order: 2;
         width: 100%;
     }
-    .hero-subject img { max-height: 50vh; width: 100%; object-fit: cover; }
+    
+    .hero-subject img { 
+        max-height: 50vh; 
+        width: 100%; 
+        object-fit: cover; 
+    }
 
-    /* Cards Rápidas - Evitar superposición en móvil */
     .cards-section {
-        margin-top: 20px; /* Cambiado de margen negativo a positivo */
-        padding: 0 15px;
+        padding: 30px 15px;
     }
     
-    .about-features { grid-template-columns: 1fr; }
-
-    /* Beneficios */
-    .benefits-grid {
-        grid-template-columns: 1fr;
+    .about-features { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .benefits-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px;
     }
     
     .curiosity-banner {
@@ -1229,32 +1567,124 @@ body {
         top: 20px;
     }
     
-    /* Contacto */
-    .contact-wrapper { flex-direction: column; }
-    .form-row { flex-direction: column; gap: 0; }
+    .contact-wrapper { 
+        flex-direction: column; 
+    }
+    
+    .form-row { 
+        flex-direction: column; 
+        gap: 0; 
+    }
+    
     .contact-info-panel, 
-    .contact-form-panel { padding: 40px 30px; }
+    .contact-form-panel { 
+        padding: 40px 30px; 
+    }
     
-    /* Footer */
-    .footer-top { grid-template-columns: 1fr; gap: 40px; }
-    .footer-brand { grid-column: span 1; }
-    .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
+    .footer-top { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
     
-    /* Botón flotante */
-    .whatsapp-float {
+    .footer-brand { 
+        grid-column: span 1; 
+    }
+    
+    .footer-bottom { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 15px; 
+    }
+    
+    .whatsapp-container {
         bottom: 20px;
         right: 20px;
     }
+    
+    .back-to-top {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-header p {
+        font-size: 1.1rem;
+    }
+
+    .services-grid,
+    .benefits-grid {
+        gap: 20px;
+    }
+
+    .btn-large {
+        font-size: 1.1rem;
+        padding: 16px 30px;
+    }
 }
 
+/* Móviles pequeños */
 @media (max-width: 576px) {
-    /* Ajustes para pantallas muy pequeñas */
-    .cards-container { grid-template-columns: 1fr; }
-    .hero-content h1 { font-size: 2.2rem; }
-    .section-header h2 { font-size: 2rem; }
+    :root {
+        --section-padding: 40px 0;
+    }
+
+    .lang-switch {
+        margin-left: 10px;
+        gap: 4px;
+    }
     
-    /* Botón flotante solo ícono en móviles pequeños */
-    .whatsapp-float span { display: none; }
+    .lang-btn {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    .cards-container { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .hero-content h1 { 
+        font-size: 2.2rem; 
+    }
+    
+    .section-header h2 { 
+        font-size: 2rem; 
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+
+    .benefit-content p {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-content p {
+        font-size: 0.95rem;
+    }
+
+    .whatsapp-float span { 
+        display: none; 
+    }
+    
     .whatsapp-float { 
         padding: 15px; 
         border-radius: 50%; 
@@ -1262,5 +1692,58 @@ body {
         height: 60px;
         justify-content: center;
     }
-    .whatsapp-float i { margin: 0; }
+    
+    .whatsapp-float i { 
+        margin: 0; 
+    }
+    
+    .wa-bubble {
+        font-size: 0.85rem;
+        max-width: 250px;
+    }
+
+    .custom-notification {
+        max-width: 280px;
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+
+    .coren-badge {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+
+    .coren-badge i {
+        font-size: 1.1rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .nav-logo span {
+        font-size: 1.2rem;
+    }
+
+    .nav-logo i {
+        font-size: 1.4rem;
+    }
+
+    .wa-bubble {
+        max-width: 200px;
+        font-size: 0.8rem;
+    }
 }
