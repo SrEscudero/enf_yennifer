@@ -1,5 +1,5 @@
 // db.js - Base de dados de depoimentos / Base de datos de testimonios
-// Kelvis Tech - Enf. Yennifer Blanco
+// Kelvis Tech - Enf. Yennifer Escudero
 
 const testimonials = [
     {
@@ -43,5 +43,5 @@ const testimonials = [
         content: "Tive uma ferida complexa que precisava de curativos especializados. A Yennifer veio até minha casa por várias semanas, sempre com material de qualidade e técnica excelente. A ferida cicatrizou perfeitamente. Recomendo!",
         avatar: "https://ui-avatars.com/api/?name=Roberto+Silveira&background=1F2937&color=fff&bold=true&size=128",
         stars: 5
-    }
+    },
 ];

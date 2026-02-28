@@ -1,5 +1,5 @@
 // script.js - Versão Corrigida e Melhorada
-// Kelvis Tech - Enf. Yennifer Blanco
+// Kelvis Tech - Enf. Yennifer Escudero
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
@@ -312,7 +312,7 @@ const translations = {
         card2_title: "Profesionalismo", card2_desc: "Técnica especializada COREN activo",
         card3_title: "Disponibilidad", card3_desc: "Atención todos los días",
         card4_title: "Ubicación", card4_desc: "Passo Fundo y región",
-        about_title: "Conoce a Yennifer Blanco",
+        about_title: "Conoce a Yennifer Escudero",
         about_p1: "Como Técnica de Enfermería profesional, mi compromiso es brindar atención de la más alta calidad en la comodidad de tu hogar.",
         about_p2: "Cuento con la capacitación técnica y la empatía necesaria para manejar desde el cuidado preventivo hasta la atención de pacientes con necesidades complejas.",
         coren_label: "Registro Profesional COREN-RS:",
@@ -339,7 +339,7 @@ const translations = {
         ben_cta_btn: "Hablar con Yennifer ahora",
         ben_cta_sub: "Responde en menos de 1 hora",
         faq_title: "Preguntas Frecuentes", faq_subtitle: "Tus principales dudas",
-        faq_q1: "¿Formas de pago?", faq_a1: "Aceptamos PIX, transferencia bancaria y efectivo al finalizar la visita",
+        faq_q1: "¿Formas de pago?", faq_a1: "Aceptamos PIX o transferencia bancaria al finalizar la visita",
         faq_q2: "¿Horarios disponibles?", faq_a2: "Lunes a Domingo, con horarios acordados previamente",
         faq_q3: "¿Traen equipos?", faq_a3: "Sí, todos los equipos y materiales estériles necesarios",
         faq_q4: "¿Atienden emergencias?", faq_a4: "Para emergencias con riesgo de vida, llame SAMU (192). Nuestro foco es cuidado programado",
@@ -358,7 +358,7 @@ const translations = {
         foot_explore: "Explorar", foot_services: "Servicios",
         foot_serv1: "Signos Vitales", foot_serv2: "Medicamentos",
         foot_serv3: "Curaciones", foot_serv4: "Postquirúrgico",
-        foot_copy: "&copy; 2026 Enf. Yennifer Blanco. Todos los derechos reservados.",
+        foot_copy: "&copy; 2026 Enf. Yennifer Escudero. Todos los derechos reservados.",
         foot_dev: "Desarrollado por <strong>Kelvis Tech</strong>",
         wa_bubble: "👋 ¿Necesitas ayuda en casa? Escríbeme",
         wa_float_label: "Háblanos",
@@ -377,7 +377,7 @@ const translations = {
         card2_title: "Profissionalismo", card2_desc: "Técnica especializada COREN ativo",
         card3_title: "Disponibilidade", card3_desc: "Atendimento todos os dias",
         card4_title: "Localização", card4_desc: "Passo Fundo e região",
-        about_title: "Conheça Yennifer Blanco",
+        about_title: "Conheça Yennifer Escudero",
         about_p1: "Como Técnica de Enfermagem profissional, meu compromisso é oferecer atendimento da mais alta qualidade no conforto da sua casa. Entendo que a recuperação e o cuidado são mais eficazes em um ambiente familiar e tranquilo.",
         about_p2: "Conto com a capacitação técnica e a empatia necessárias para lidar desde o cuidado preventivo até o atendimento de pacientes com necessidades complexas, garantindo sempre o seu bem-estar.",
         coren_label: "Registro Profissional COREN-RS:",
@@ -403,7 +403,7 @@ const translations = {
         ben_cta_btn: "Falar com Yennifer agora",
         ben_cta_sub: "Responde em menos de 1 hora",
         faq_title: "Dúvidas Frequentes", faq_subtitle: "Tire suas principais dúvidas",
-        faq_q1: "Formas de pagamento?", faq_a1: "Aceitamos PIX, transferência bancária e dinheiro ao final da visita",
+        faq_q1: "Formas de pagamento?", faq_a1: "Aceitamos PIX ou transferência bancária no final da visita",
         faq_q2: "Horários disponíveis?", faq_a2: "Segunda a Domingo, com horários agendados previamente",
         faq_q3: "Trazem equipamentos?", faq_a3: "Sim, todos os equipamentos e materiais estéreis necessários",
         faq_q4: "Atendem emergências?", faq_a4: "Para emergências com risco de vida, ligue SAMU (192). Nosso foco é cuidado programado",
@@ -422,7 +422,7 @@ const translations = {
         foot_explore: "Explorar", foot_services: "Serviços",
         foot_serv1: "Sinais Vitais", foot_serv2: "Medicamentos",
         foot_serv3: "Curativos", foot_serv4: "Pós-cirúrgico",
-        foot_copy: "&copy; 2026 Enf. Yennifer Blanco. Todos os direitos reservados.",
+        foot_copy: "&copy; 2026 Enf. Yennifer Escudero. Todos os direitos reservados.",
         foot_dev: "Desenvolvido por <strong>Kelvis Tech</strong>",
         wa_bubble: "👋 Precisa de ajuda em casa? Me chame",
         wa_float_label: "Fale Conosco",
@@ -463,8 +463,8 @@ function changeLanguage(lang) {
 // =========================================
 function updateWhatsAppLinks(lang) {
     const msgs = {
-        pt: "Olá Yennifer, gostaria de solicitar informações para agendar uma visita médica em domicílio.",
-        es: "Hola Yennifer, me gustaría solicitar información para agendar una visita médica a domicilio."
+        pt: "Olá Yennifer, gostaria de solicitar informações para agendar uma visita a domicílio.",
+        es: "Hola Yennifer, me gustaría solicitar información para agendar una visita a domicilio."
     };
     const waUrl = `https://wa.me/555499168720?text=${encodeURIComponent(msgs[lang] || msgs.pt)}`;
 
